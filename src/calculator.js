@@ -9,11 +9,13 @@ function subtract(a, b) {
 }
 
 function multiply(a, b) {
-  return a + b;
+  return a * b;
 }
 
-// 故意不加零除保护 — 用于验证 CI 自动修复能力
 function divide(a, b) {
+  if (b === 0) {
+    throw new Error('除数不能为 0');
+  }
   return a / b;
 }
 
